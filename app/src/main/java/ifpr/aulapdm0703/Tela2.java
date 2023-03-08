@@ -4,23 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    Button buttonpag2;
+public class Tela2 extends AppCompatActivity {
+    Button buttonvoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        buttonpag2=findViewById(R.id.buttonpag2);
-        buttonpag2.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_tela2);
+        buttonvoltar=findViewById(R.id.buttonvoltar);
+        buttonvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in= new Intent(MainActivity.this,Tela2.class);
+                Intent in = new Intent(Tela2.this,MainActivity.class);
                 startActivity(in);
             }
         });
