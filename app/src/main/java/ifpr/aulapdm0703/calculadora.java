@@ -15,7 +15,7 @@ public class calculadora extends AppCompatActivity {
     Button bmenos;
     Button bmultiplica;
     Button bdivide;
-    TextView resultado;
+    EditText etresultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +27,53 @@ public class calculadora extends AppCompatActivity {
         bmenos=findViewById(R.id.bmenos);
         bmultiplica=findViewById(R.id.bmultiplica);
         bdivide=findViewById(R.id.bdivide);
-        resultado=findViewById(R.id.resultado);
+        etresultado=findViewById(R.id.resultado);
 
         bmais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String n1 = etN1.getText().toString();
                 String n2 = etN2.getText().toString();
-                resultado.setText(n1 + n2);
+                int num1 = Integer.parseInt(n1);
+                int num2 = Integer.parseInt(n2);
+                int soma = num1+num2;
+                etresultado.setText(String.valueOf(soma));
+            }
+        });
+
+        bmenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String n1 = etN1.getText().toString();
+                String n2 = etN2.getText().toString();
+                int num1 = Integer.parseInt(n1);
+                int num2 = Integer.parseInt(n2);
+                int subtrair = num1-num2;
+                etresultado.setText(String.valueOf(subtrair));
+            }
+        });
+
+        bmultiplica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String n1 = etN1.getText().toString();
+                String n2 = etN2.getText().toString();
+                int num1 = Integer.parseInt(n1);
+                int num2 = Integer.parseInt(n2);
+                int multiplicar = num1*num2;
+                etresultado.setText(String.valueOf(multiplicar));
+            }
+        });
+
+        bdivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String n1 = etN1.getText().toString();
+                String n2 = etN2.getText().toString();
+                int num1 = Integer.parseInt(n1);
+                int num2 = Integer.parseInt(n2);
+                int dividir = num1/num2;
+                etresultado.setText(String.valueOf(dividir));
             }
         });
     }
